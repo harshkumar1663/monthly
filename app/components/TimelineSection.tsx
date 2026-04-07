@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { color, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { TIMELINE_EVENTS } from '@/app/utils/constants';
 
 interface TimelineProps {
@@ -130,7 +130,7 @@ export default function TimelineSection({ onScrollComplete }: TimelineProps) {
   }, [totalSlides]);
 
   return (
-    <div ref={containerRef} className="h-screen w-screen overflow-hidden snap-y snap-mandatory scroll-smooth overscroll-none">
+    <div ref={containerRef} className="h-screen w-full overflow-hidden snap-y snap-mandatory scroll-smooth overscroll-none">
       <section
         ref={(el) => {
           slideRefs.current[0] = el;
@@ -144,13 +144,13 @@ export default function TimelineSection({ onScrollComplete }: TimelineProps) {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl"
         >
-          <h2 className="pixel-title text-2xl md:text-4xl mb-5">Our Journey</h2>
+          <h2 className="pixel-title text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-5">Our Journey</h2>
           <div className="flex justify-center gap-4 text-2xl">
             <span className="animate-pulse-heart">💕</span>
             <span className="animate-sparkle">✨</span>
             <span className="animate-float">🌙</span>
           </div>
-          <h6  color='white'>Swipe once to move one card</h6>
+          <p className="mt-4 text-sm sm:text-base text-white/90">Swipe once to move one card</p>
         </motion.div>
       </section>
 
@@ -173,7 +173,7 @@ export default function TimelineSection({ onScrollComplete }: TimelineProps) {
               variants={itemVariants}
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.2 }}
-              className="pixel-card mx-auto w-[min(92vw,58rem)] h-[80vh] md:h-[84vh] flex flex-col justify-center text-center border-2 border-white/70 bg-gradient-to-b from-white/95 to-pixel-cream/80 shadow-[0_16px_45px_rgba(74,74,74,0.15)]"
+              className="pixel-card mx-auto w-[min(94vw,48rem)] md:w-[min(88vw,56rem)] h-[76vh] md:h-[78vh] lg:h-[84vh] flex flex-col justify-center text-center border-2 border-white/70 bg-gradient-to-b from-white/95 to-pixel-cream/80 shadow-[0_16px_45px_rgba(74,74,74,0.15)]"
             >
               <div className="mb-6">
                 <motion.div
@@ -186,9 +186,9 @@ export default function TimelineSection({ onScrollComplete }: TimelineProps) {
                 
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-pixel-dark-pink mb-5 px-3">{event.title}</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pixel-dark-pink mb-5 px-3">{event.title}</h3>
               <div className="w-full flex justify-center px-4">
-                <p className="text-center text-lg md:text-2xl text-pixel-dark opacity-90 leading-relaxed w-full max-w-[28ch] break-words">
+                <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl text-pixel-dark opacity-90 leading-relaxed w-full max-w-[28ch] break-words">
                   {event.description}
                 </p>
               </div>

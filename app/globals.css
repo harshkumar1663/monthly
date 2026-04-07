@@ -185,3 +185,19 @@ html {
 .inst{
     color: white;
   }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .pixel-card {
+    padding: 1.75rem;
+  }
+
+  .pixel-title {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+  }
+
+  .pixel-button {
+    font-size: 11px;
+    padding: 0.7rem 1.25rem;
+  }
+}

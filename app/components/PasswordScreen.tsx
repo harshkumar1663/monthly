@@ -56,7 +56,7 @@ export default function PasswordScreen({ onPasswordCorrect }: PasswordScreenProp
   }));
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center px-4 relative overflow-hidden bg-gradient-to-b from-pixel-light-lavender via-pixel-light-blue to-pixel-cream">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 py-6 md:py-10 relative overflow-hidden bg-gradient-to-b from-pixel-light-lavender via-pixel-light-blue to-pixel-cream">
       {/* Animated sky background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Clouds */}
@@ -135,7 +135,7 @@ export default function PasswordScreen({ onPasswordCorrect }: PasswordScreenProp
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, type: 'spring', stiffness: 80 }}
-          className="pixel-card w-full max-w-md shadow-xl backdrop-blur-sm bg-white/95"
+          className="pixel-card w-full max-w-[min(92vw,34rem)] md:max-w-[min(86vw,40rem)] shadow-xl backdrop-blur-sm bg-white/95"
         >
           <div className="flex flex-col items-center gap-6">
             {/* Greeting */}
@@ -204,7 +204,7 @@ export default function PasswordScreen({ onPasswordCorrect }: PasswordScreenProp
             <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
               <div className="relative">
                 <label className="block text-xs font-pixel-body font-bold text-pixel-dark mb-2 ml-1">
-                  What's our story called?
+                  What's your name (the one i love calling you :D)?
                 </label>
                 <input
                   type="password"
@@ -214,7 +214,7 @@ export default function PasswordScreen({ onPasswordCorrect }: PasswordScreenProp
                     setError('');
                   }}
                   onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSubmit(e)}
-                  placeholder="Enter the password..."
+                  placeholder="Enter your name..."
                   className="w-full px-4 py-3 bg-pixel-white border-3 border-pixel-pink rounded-lg font-pixel-body text-sm focus:outline-none focus:border-pixel-dark-pink focus:shadow-[0_0_8px_rgba(255,182,193,0.5)] transition-all placeholder:text-pixel-dark placeholder:opacity-40"
                   autoFocus
                 />
@@ -253,10 +253,10 @@ export default function PasswordScreen({ onPasswordCorrect }: PasswordScreenProp
               transition={{ delay: 0.8, duration: 0.5 }}
             >
               <p className="font-pixel-body text-pixel-dark opacity-60 mb-1">
-                Need a hint? 🤔
+                Hint? 🤔
               </p>
               <p className="font-pixel-body text-pixel-dark opacity-50 text-xs">
-                Think about what connects us...
+                ( )
               </p>
             </motion.div>
           </div>

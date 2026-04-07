@@ -83,7 +83,7 @@ export const TIMELINE_EVENTS = [
 ];
 
 // Password (customize this!)
-export const APP_PASSWORD = "ourStory";
+export const APP_PASSWORD = "golu molu";
 
 // Game constants
 export const GAME_WIDTH = 800;

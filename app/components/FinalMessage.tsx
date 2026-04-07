@@ -24,7 +24,7 @@ export default function FinalMessage({ onRestart }: FinalMessageProps) {
   }));
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center px-4 relative overflow-hidden">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 py-6 md:py-10 relative overflow-hidden">
       {/* Animated hearts background */}
       {hearts.map((heart) => (
         <motion.div
@@ -53,9 +53,9 @@ export default function FinalMessage({ onRestart }: FinalMessageProps) {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7, type: 'spring', stiffness: 50 }}
-        className="pixel-card w-full max-w-2xl shadow-xl relative z-10"
+        className="pixel-card w-full max-w-[min(94vw,52rem)] shadow-xl relative z-10"
       >
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-6 md:gap-8">
           {/* Celebration emojis */}
           <motion.div
             className="flex gap-4 text-4xl"
@@ -100,7 +100,7 @@ export default function FinalMessage({ onRestart }: FinalMessageProps) {
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-3 gap-4 w-full"
+            className="grid grid-cols-3 gap-2 md:gap-4 w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
