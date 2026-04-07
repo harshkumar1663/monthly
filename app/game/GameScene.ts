@@ -343,7 +343,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private createGoal() {
-    this.goalCharacter = this.add.container(750, 540);
+    this.goalCharacter = this.add.container(750, 500);
     const character = this.add.sprite(0, 0, 'goal-character');
     const heart = this.add.text(0, -36, '💖', { fontSize: '20px' }).setOrigin(0.5);
     const label = this.add
@@ -435,16 +435,16 @@ export class GameScene extends Phaser.Scene {
       circle.on('pointerupoutside', () => onPress(false));
     };
 
-    makeButton(72, GAME_HEIGHT - 70, '←', (v) => {
+    makeButton(70, GAME_HEIGHT - 70, '←', (v) => {
       this.touchLeft = v;
     });
-    makeButton(148, GAME_HEIGHT - 70, '→', (v) => {
+    makeButton(146, GAME_HEIGHT - 70, '→', (v) => {
       this.touchRight = v;
     });
-    makeButton(GAME_WIDTH - 120, GAME_HEIGHT - 110, '↑', (v) => {
+    makeButton(108, GAME_HEIGHT - 132, '↑', (v) => {
       this.touchUp = v;
     });
-    makeButton(GAME_WIDTH - 120, GAME_HEIGHT - 40, '↓', (v) => {
+    makeButton(108, GAME_HEIGHT - 18, '↓', (v) => {
       this.touchDown = v;
     });
   }
